@@ -1,0 +1,93 @@
+/* Each edge is a column of the same continuous silhouette. Sharing the edges
+   between snapshots leaves a solid field of blue, including at fractional widths. */
+@property --curtain-a { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@property --curtain-b { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@property --curtain-c { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@property --curtain-d { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@property --curtain-e { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@property --curtain-f { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@property --curtain-g { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+
+@keyframes cookd-curtain {
+  0% { --curtain-a: 0%; --curtain-b: 0%; --curtain-c: 0%; --curtain-d: 0%; --curtain-e: 0%; --curtain-f: 0%; --curtain-g: 0%; }
+  7% { --curtain-b: 0%; }
+  14% { --curtain-c: 0%; }
+  21% { --curtain-d: 0%; }
+  28% { --curtain-e: 0%; }
+  35% { --curtain-f: 0%; }
+  42% { --curtain-g: 0%; }
+  58% { --curtain-a: 100%; }
+  65% { --curtain-b: 100%; }
+  72% { --curtain-c: 100%; }
+  79% { --curtain-d: 100%; }
+  86% { --curtain-e: 100%; }
+  93% { --curtain-f: 100%; }
+  100% { --curtain-a: 100%; --curtain-b: 100%; --curtain-c: 100%; --curtain-d: 100%; --curtain-e: 100%; --curtain-f: 100%; --curtain-g: 100%; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+
+  .home-page main.footer-cover-ready {
+    top: min(0px, calc(100dvh - var(--footer-preceding-height) - var(--visit-cover-delay, 0px)));
+  }
+  main.footer-cover-ready.visit-anchor-reading {
+    position: relative;
+    top: 0;
+  }
+
+  :root {
+    --curtain-time: 520ms;
+    --curtain-ease: cubic-bezier(.45, 0, .22, 1);
+  }
+
+  ::view-transition { background: #19244d; }
+  ::view-transition-group(root) { animation: none; }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    mix-blend-mode: normal;
+    object-fit: fill;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    clip-path: polygon(
+      0 var(--curtain-a), 14.2857% var(--curtain-a),
+      14.2857% var(--curtain-b), 28.5714% var(--curtain-b),
+      28.5714% var(--curtain-c), 42.8571% var(--curtain-c),
+      42.8571% var(--curtain-d), 57.1429% var(--curtain-d),
+      57.1429% var(--curtain-e), 71.4286% var(--curtain-e),
+      71.4286% var(--curtain-f), 85.7143% var(--curtain-f),
+      85.7143% var(--curtain-g), 100% var(--curtain-g),
+      100% 100%, 0 100%
+    );
+    animation: cookd-curtain var(--curtain-time) var(--curtain-ease) both;
+  }
+  ::view-transition-new(root) {
+    animation-direction: reverse;
+    animation-delay: var(--curtain-time);
+  }
+
+  html[data-cookd-curtain]::before {
+    --ink-slat: linear-gradient(#19244d, #19244d);
+    --slat-width: calc(100% / 7 + 1px);
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 2147483646;
+    pointer-events: none;
+    background:
+      var(--ink-slat) 0% 0 / var(--slat-width) var(--curtain-a) no-repeat,
+      var(--ink-slat) 16.6667% 0 / var(--slat-width) var(--curtain-b) no-repeat,
+      var(--ink-slat) 33.3333% 0 / var(--slat-width) var(--curtain-c) no-repeat,
+      var(--ink-slat) 50% 0 / var(--slat-width) var(--curtain-d) no-repeat,
+      var(--ink-slat) 66.6667% 0 / var(--slat-width) var(--curtain-e) no-repeat,
+      var(--ink-slat) 83.3333% 0 / var(--slat-width) var(--curtain-f) no-repeat,
+      var(--ink-slat) 100% 0 / var(--slat-width) var(--curtain-g) no-repeat;
+    animation: cookd-curtain var(--curtain-time) var(--curtain-ease) both;
+  }
+  html[data-cookd-curtain="reveal"]::before { animation-direction: reverse; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}

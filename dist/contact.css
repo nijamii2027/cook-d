@@ -1,0 +1,154 @@
+.site-header .nav-contact {
+  position: relative;
+  color: var(--ink);
+  font: 400 1.2rem/1.25 var(--hand);
+}
+
+.site-header .contact-trigger {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: .22em;
+  min-height: 44px;
+  width: fit-content;
+  padding: .3rem 0;
+  list-style: none;
+  color: inherit;
+  user-select: none;
+}
+
+.contact-trigger::-webkit-details-marker { display: none; }
+.contact-trigger svg { width: .72em; height: .72em; flex-shrink: 0; }
+.nav-contact[open] > .contact-trigger svg { rotate: 180deg; }
+.contact-trigger:hover,
+.nav-contact[open] > .contact-trigger {
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: .2em;
+}
+
+.site-header .contact-note {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + .45rem);
+  right: -.75rem;
+  width: min(17rem, calc(100vw - 2rem));
+  padding: .4rem .85rem .55rem;
+  background: #fff9e9;
+  border: 1px solid var(--ink);
+  border-top-width: 2px;
+  border-radius: 2px 2px 4px 3px;
+  box-shadow: 2px 3px 0 #d6c6a0, 3px 5px 0 #19244d33, 0 9px 17px #3c2f2015;
+}
+
+.site-header .contact-row {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  width: 100%;
+  min-height: 44px;
+  padding: .35rem .08rem;
+  color: inherit;
+  border: 0;
+  font: 400 1.1rem/1.28 var(--hand);
+  text-align: start;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-row + .contact-row { border-top: 1px dashed #bdb098; }
+.contact-row > svg { flex: 0 0 18px; }
+.site-header .contact-note a::before,
+.site-header .contact-note a::after { content: none; }
+.contact-note a:is(:hover,:focus-visible) > span {
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-underline-offset: .16em;
+}
+.site-header .contact-phone { color: #5f574b; }
+
+@keyframes open-contact-note {
+  from { opacity: 0; transform: translateY(-.3rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .contact-trigger svg { transition: rotate .17s ease; }
+  .nav-contact[open] > .contact-note { animation: open-contact-note .23s cubic-bezier(.22,.76,.28,1); }
+}
+
+@media (max-width: 760px) {
+  .site-header .mobile-nav {
+    max-height: calc(100vh - 61px);
+    max-height: calc(100dvh - 61px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .mobile-nav .contact-trigger {
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid var(--rule);
+    font-size: 1.65rem;
+  }
+  .mobile-nav .contact-note {
+    position: relative;
+    inset: auto;
+    width: min(100%, 19.5rem);
+    margin: .48rem 0 .3rem;
+  }
+  .mobile-nav .contact-row { font-size: 1.15rem; }
+}
+
+/* Keep the native disclosure box painted until the exit settles. The floating
+   box itself owns its anchor; translating it never repositions a nested absolute. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports selector(details::details-content) and (transition-behavior: allow-discrete) {
+    .nav-contact[open] > .contact-note { animation: none; }
+
+    .nav-contact::details-content {
+      display: flow-root;
+      content-visibility: hidden;
+      opacity: 0;
+      translate: 0 -.3rem;
+      pointer-events: none;
+      transition: opacity .18s ease-in, translate .2s cubic-bezier(.38,0,.7,1),
+                  content-visibility .2s allow-discrete;
+    }
+    .nav-contact[open]::details-content {
+      content-visibility: visible;
+      opacity: 1;
+      translate: 0 0;
+      pointer-events: auto;
+      transition: opacity .21s ease-out, translate .25s cubic-bezier(.2,.78,.25,1),
+                  content-visibility 0s allow-discrete;
+    }
+    .desktop-nav .nav-contact::details-content {
+      position: absolute;
+      z-index: 5;
+      top: calc(100% + .45rem);
+      right: -.75rem;
+      width: min(17rem, calc(100vw - 2rem));
+    }
+    .desktop-nav .nav-contact > .contact-note {
+      position: static;
+      width: 100%;
+    }
+
+    @supports (interpolate-size: allow-keywords) {
+      .mobile-nav .nav-contact::details-content {
+        interpolate-size: allow-keywords;
+        block-size: 0;
+        overflow: clip;
+        overflow-clip-margin: .35rem;
+        transition-property: block-size, opacity, translate, content-visibility;
+        transition-duration: .23s;
+        transition-timing-function: cubic-bezier(.25,.65,.26,1);
+        transition-behavior: normal, normal, normal, allow-discrete;
+      }
+      .mobile-nav .nav-contact[open]::details-content {
+        block-size: auto;
+        transition-duration: .25s, .21s, .25s, 0s;
+      }
+    }
+  }
+}

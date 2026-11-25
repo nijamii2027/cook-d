@@ -1,0 +1,87 @@
+.visit-stop {
+  --visit-rule: #c8bda5;
+  position: relative;
+  color: var(--ink);
+  background: #f4eddf;
+  padding: clamp(4.25rem, 6.5vw, 6.25rem) var(--gutter) clamp(2.35rem, 4.2vw, 4.5rem);
+}
+.visit-card {
+  display: grid;
+  grid-template-columns: minmax(0, .87fr) minmax(0, 1.13fr);
+  width: min(100%, 59rem);
+  margin: 0 auto;
+  background: #fff9ec;
+  border: 1px solid var(--visit-rule);
+  border-radius: 3px;
+  box-shadow: 0 4px 0 -2px #f9f1de, 0 5px 0 -2px #c9baa0, 0 8px 16px -13px #655a46;
+}
+.visit-copy {
+  align-self: center;
+  padding: 1.6rem clamp(1.45rem, 3vw, 2.65rem);
+}
+.visit-script { font: 400 1.25rem/1.1 var(--hand); margin-bottom: .55rem; }
+.visit-copy h2 { font: 400 clamp(2.02rem, 3.1vw, 2.8rem)/1.01 var(--display); letter-spacing: -.045em; }
+.visit-copy h2 em { font-weight: 400; }
+.visit-copy address { margin-top: .95rem; font: 500 1rem/1.43 var(--body); }
+.visit-directions {
+  display: inline-flex; align-items:center; justify-content:center; gap:.43rem;
+  margin-top: .85rem; padding:.56rem .94rem; min-height:40px; border:1px solid var(--ink);
+  border-radius: 3rem; background:var(--ink); color:var(--paper);
+  font:600 .94rem/1.25 var(--body); transition: background .18s, border-color .18s;
+}
+.visit-directions:is(:hover,:focus-visible) { background: #9c392a; border-color: #9c392a; }
+.visit-map { min-width:0; align-self:stretch; display:grid; align-content:center; margin:0; padding:1.15rem 1.15rem .8rem; border-left:1px dashed var(--visit-rule); }
+.visit-map-frame { --nod-size: clamp(96px, 9.1vw, 132px); position:relative; }
+.visit-google-map { display:block; width:100%; height:auto; aspect-ratio:5/3; min-height:200px; border:1px solid #746e60; background:#f8edd6; border-radius:2px; }
+.visit-guest { position:absolute; z-index:1; width:var(--nod-size); top:0; left:66%; transform:translate(-50%,-77.77778%); pointer-events:none; }
+.visit-guest > .cookd-sprite { aspect-ratio:1; }
+.visit-map figcaption { padding-top:.38rem; font:400 1.03rem/1.3 var(--hand); }
+.visit-fold { grid-column:1/-1; display:grid; grid-template-columns:minmax(0,.87fr) minmax(0,1.13fr); align-items:start; border-top:1px solid var(--visit-rule); }
+.visit-hours { min-width:0; padding-inline:clamp(1.25rem,3vw,2.65rem); }
+.visit-hours summary { display:flex; align-items:center; gap:.7rem; padding:.4rem 0; min-height:3.25rem; list-style:none; cursor:pointer; font:650 .94rem/1.35 var(--body); }
+.visit-hours summary::-webkit-details-marker { display:none; }
+.visit-hours summary svg { box-sizing:content-box; flex:none; margin-left:auto; padding:.36rem; border:1px solid #d6c8b3; border-radius:50%; }
+.visit-hours-teaser { color:#665e51; font:400 .83rem/1.35 var(--body); }
+.visit-plus { transform-origin:center; transform-box:fill-box; transition:transform .27s,opacity .27s; }
+.visit-hours[open] .visit-plus { transform:rotate(90deg);opacity:0; }
+.visit-hours[data-hours-state="closing"] .visit-plus { transform:rotate(0);opacity:1; }
+.visit-timetable { overflow:hidden; display:flow-root; }
+.visit-hours dl { margin:0; padding:.05rem 0 .9rem; }
+.visit-hours dl div { display:flex; justify-content:space-between; gap:1rem; padding:.32rem 0; border-top:1px solid #e3d9c8; font:400 .95rem/1.4 var(--body); }
+.visit-hours dd { font-variant-numeric:tabular-nums; font-weight:550; }
+.visit-contacts { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; align-self:start; gap:0 1rem; min-height:3.25rem; padding:0 1.15rem; border-left:1px dashed var(--visit-rule); }
+.visit-contacts a { display:inline-flex; align-items:center; gap:.44rem; min-height:44px; padding:.24rem 0; font:500 .92rem/1.35 var(--body); }
+.visit-contacts svg { flex:none; width:.94rem; height:.94rem; fill:none; stroke:currentColor; stroke-width:1.4; }
+.visit-contacts a:is(:hover,:focus-visible),.visit-hours summary:is(:hover,:focus-visible)>span:first-child { text-decoration:underline; text-underline-offset:.25em; }
+@media screen {
+  /* Preserve the current card position as an expanding timetable leaves the
+     sticky footer reveal. The main then scrolls normally until it can rejoin
+     the cover without shifting any visible content. */
+  .home-page main.hours-reading-flow { position:relative; top:var(--hours-cover-offset,0px); }
+  html.hours-changing { overflow-anchor:none; }
+}
+@media (max-width:700px) {
+  .visit-card { width:min(100%, 31rem); grid-template-columns:minmax(0,1fr); }
+  .visit-stop { padding:2.25rem var(--gutter) 2.8rem; }
+  .visit-copy { padding:1.3rem 1.2rem .6rem; }
+  .visit-copy h2 { font-size:clamp(1.83rem, 6.7vw, 2.4rem); }
+  .visit-copy address { font-size:.95rem; margin-top:.72rem; }
+  .visit-script { font-size:1.1rem; margin-bottom:.32rem; }
+  .visit-directions { margin-top:.65rem; }
+  .visit-map { padding:.72rem .85rem .55rem; border:0; }
+  .visit-map-frame { --nod-size:clamp(84px, 22vw, 106px); }
+  .visit-guest { left:66%; right:auto; }
+  .visit-fold { grid-template-columns:1fr; }
+  .visit-hours { padding-inline:1.15rem; }
+  .visit-hours summary { min-height:48px; }
+  .visit-contacts { border-left:0; border-top:1px solid #ded3c1; padding:0 1.15rem; min-height:3rem; gap:0 .75rem; }
+}
+@media (max-width:370px) {
+  .visit-hours-teaser { font-size:.77rem; }
+  .visit-map figcaption { font-size:.92rem; }
+  .visit-contacts { column-gap:.62rem; }
+  .visit-contacts a { font-size:.875rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .visit-directions,.visit-plus { transition:none; }
+}

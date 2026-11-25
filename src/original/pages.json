@@ -1,0 +1,613 @@
+{
+  "home": {
+    "page": "/",
+    "bodyTextNodes": [
+      "Skip to content",
+      "Cafe",
+      "Home",
+      "About",
+      "Menu",
+      "Visit",
+      "See the menu",
+      "Menu",
+      "Home",
+      "About",
+      "Menu",
+      "Meet Bagel",
+      "Visit",
+      "Made carefully. Served casually.",
+      "Asian-inspired breakfast, lunch and coffee in Sunnybank.",
+      "You look",
+      "Cook'd.",
+      "Have a seat.",
+      "Explore the menu",
+      "Get directions",
+      "From the kitchen",
+      "Your usual.",
+      "Or your new usual.",
+      "See the full menu",
+      "Breakfast",
+      "Kaya & Shokupan Set",
+      "$14.90",
+      "Lunch",
+      "Singapore Chilli Crab Omurice",
+      "$34.90",
+      "Bakery",
+      "Matcha Almond Salt Bread",
+      "$8.50",
+      "About us",
+      "Familiar, with a few unexpected turns.",
+      "Food we genuinely want to eat.",
+      "Cook'd is a neighbourhood café built around food we genuinely want to eat. Our menu takes inspiration from across Asia, shaped by Western techniques and a lot of curiosity.",
+      "We start with what makes a dish good, keep its character, then play around the edges—a familiar breakfast reworked through a different technique, or a drink combination that sounds slightly questionable until you try it.",
+      "Our menu moves with the seasons as we test new ideas and keep changing things when we think we can make them better. Thoughtful food that doesn't take itself too seriously.",
+      "Breakfast & lunch",
+      "Across Asia, seen through our kitchen.",
+      "Familiar flavours, thoughtful technique and room for a little curiosity.",
+      "Coffee & drinks",
+      "Five Senses coffee, kept uncomplicated.",
+      "Espresso classics and rotating drinks developed in-house.",
+      "Fresh bakes",
+      "Small batches, simple things done well.",
+      "Salt bread, seasonal pastries and whatever we've been working on lately.",
+      "Fresh from the oven",
+      "A little something on the side.",
+      "Fresh bakes, made in small batches.",
+      "Our bakes focus on simple things done well. Expect freshly baked salt bread alongside rotating flavours, seasonal pastries and whatever we've been working on lately.",
+      "From root to cup",
+      "Serious coffee. No complication.",
+      "Our coffee is roasted by Five Senses Coffee, with espresso and milk-based classics alongside a rotating selection of drinks developed in-house.",
+      "Beyond coffee, we play with flavours we love—tea, matcha, hojicha, fruit and other familiar ingredients brought together in slightly different ways.",
+      "Find your cup",
+      "Meet Bagel",
+      "Head of unclear responsibilities.",
+      "The face hiding around Cook'd.",
+      "Inspired by our real-life dog, Bagel is curious, slightly lazy and usually more interested in what's happening in the kitchen than actually helping.",
+      "You'll spot him throughout Cook'd in illustrations, packaging and the occasional unexpected place. His job description is unclear. He seems comfortable with that.",
+      "Visit us",
+      "We'll save you a seat.",
+      "Your Sunnybank neighbourhood reset.",
+      "Shop 7, 88 Troughton Rd",
+      "Sunnybank, QLD 4109",
+      "Get directions",
+      "Email us",
+      "cookd.cafe@gmail.com",
+      "@cookd.cafe",
+      "Opening hours",
+      "Monday",
+      "6am–4pm",
+      "Tuesday",
+      "Closed",
+      "Wednesday",
+      "6am–4pm",
+      "Thursday",
+      "6am–4pm",
+      "Friday",
+      "6am–4pm",
+      "Saturday",
+      "9am–4pm",
+      "Sunday",
+      "9am–4pm",
+      "Cafe",
+      "Made carefully. Served casually.",
+      "Explore",
+      "About us",
+      "Menu",
+      "Meet Bagel",
+      "Visit",
+      "Find us",
+      "Shop 7, 88 Troughton Rd",
+      "Sunnybank, QLD 4109",
+      "cookd.cafe@gmail.com",
+      "@cookd.cafe",
+      "© 2026 Cook'd Cafe",
+      "Sunnybank · Brisbane"
+    ],
+    "links": [
+      {
+        "href": "#main"
+      },
+      {
+        "href": "/",
+        "aria-label": "Cook'd Cafe home"
+      },
+      {
+        "href": "/"
+      },
+      {
+        "href": "/#story"
+      },
+      {
+        "href": "/menu/"
+      },
+      {
+        "href": "/#visit"
+      },
+      {
+        "href": "/menu/"
+      },
+      {
+        "href": "/menu/"
+      },
+      {
+        "href": "/"
+      },
+      {
+        "href": "/#story"
+      },
+      {
+        "href": "/menu/"
+      },
+      {
+        "href": "/#bagel"
+      },
+      {
+        "href": "/#visit"
+      },
+      {
+        "href": "/menu/"
+      },
+      {
+        "href": "https://www.google.com/maps/dir/?api=1&destination=88+Troughton+Rd%2C+Sunnybank+QLD+4109"
+      },
+      {
+        "href": "/menu/"
+      },
+      {
+        "href": "/menu/#breakfast"
+      },
+      {
+        "href": "/menu/#lunch"
+      },
+      {
+        "href": "/menu/#bakery"
+      },
+      {
+        "href": "/menu/#drinks-board"
+      },
+      {
+        "href": "https://www.google.com/maps/dir/?api=1&destination=88+Troughton+Rd%2C+Sunnybank+QLD+4109"
+      },
+      {
+        "href": "mailto:cookd.cafe@gmail.com"
+      },
+      {
+        "href": "mailto:cookd.cafe@gmail.com"
+      },
+      {
+        "href": "https://www.instagram.com/cookd.cafe/"
+      },
+      {
+        "href": "/",
+        "aria-label": "Cook'd Cafe home"
+      },
+      {
+        "href": "/#story"
+      },
+      {
+        "href": "/menu/"
+      },
+      {
+        "href": "/#bagel"
+      },
+      {
+        "href": "/#visit"
+      },
+      {
+        "href": "mailto:cookd.cafe@gmail.com"
+      },
+      {
+        "href": "https://www.instagram.com/cookd.cafe/"
+      }
+    ]
+  },
+  "menu": {
+    "page": "/menu/",
+    "bodyTextNodes": [
+      "Skip to content",
+      "Cafe",
+      "Home",
+      "About",
+      "Menu",
+      "Visit",
+      "See the menu",
+      "Menu",
+      "Home",
+      "About",
+      "Menu",
+      "Meet Bagel",
+      "Visit",
+      "Made carefully. Served casually.",
+      "The Cook'd menu.",
+      "Breakfast, lunch, salt bread and something to sip.",
+      "Breakfast",
+      "Lunch",
+      "Bakery",
+      "Hot drinks",
+      "Iced drinks",
+      "Specialty",
+      "Breakfast",
+      "Kaya & Shokupan Set",
+      "$14.90",
+      "Our take on the classic Singaporean–Malaysian breakfast. Soft, fluffy house-made milk bread served with fragrant pandan kaya, whipped butter and two half-boiled eggs. Enjoy with soy sauce and white pepper for the perfect balance of sweet and savoury.",
+      "Add-ons and options ",
+      "+",
+      "Extra half-boiled egg",
+      "+$2.00",
+      "Whipped butter",
+      "+$1.50",
+      "Kaya",
+      "+$2.50",
+      "Extra bread",
+      "+$4.00",
+      "Lao Gan Ma Hot Honey Stracciatella",
+      "$20.90",
+      "Creamy Italian stracciatella paired with sweet, lightly charred peaches and our Lao Gan Ma hot honey. Finished with toasted pistachios and served with sourdough for a playful combination of creamy, sweet, spicy and savoury flavours.",
+      "Add-ons and options ",
+      "+",
+      "Prosciutto (25 g)",
+      "+$5.00",
+      "Lunch",
+      "Balinese Pork Satay",
+      "$24.90",
+      "Dairy-free",
+      "Five skewers of aromatic marinated pork, caramelised and served with our smoky sweet soy sauce, refreshing house-made pickles and fresh coriander. Inspired by the bold, fragrant flavours of Balinese street food.",
+      "Add-ons and options ",
+      "+",
+      "Extra 2 skewers",
+      "+$8.00",
+      "Sambal matah",
+      "+$2.50",
+      "Aromatic rice",
+      "+$3.50",
+      "Singapore Chilli Crab Omurice",
+      "$34.90",
+      "A whole crispy soft-shell crab served over a soft omelette and fragrant aromatic rice. Accompanied by our interpretation of Singapore’s iconic chilli crab sauce, with a touch of Indonesian Padang-style influence for added depth and complexity. Served with the sauce separately for pouring and a refreshing cucumber-cabbage salad dressed with coriander, ginger and lime.",
+      "Add-ons and options ",
+      "+",
+      "Extra whole soft-shell crab",
+      "+$12.00",
+      "Tea-Smoked Duck Inaniwa Udon",
+      "$24.90",
+      "Dairy-free",
+      "Delicate Inaniwa udon served chilled in our refreshing kankitsu tare, a citrus-infused Japanese-style sauce with savoury kombu umami and fragrant yuzu notes. Topped with slices of house-made tea-smoked duck breast with lightly crisped skin, a silky soft-cooked egg, shaved daikon, fragrant shiso and crispy Japanese rice crackers.",
+      "Add-ons and options ",
+      "+",
+      "Extra duck (3 slices)",
+      "+$6.00",
+      "Extra ontama",
+      "+$2.50",
+      "Vegan Sesame-Miso Ma Jiang Mian",
+      "$20.90",
+      "Vegan · Dairy-free",
+      "Our Taiwanese-inspired sesame noodles feature delicate Inaniwa udon coated in a rich, nutty sesame-miso sauce. Topped with savoury braised shiitake and shredded king oyster mushrooms, refreshing cucumber, spring onion and fragrant vegan chilli oil.",
+      "Add-ons and options ",
+      "+",
+      "No chilli oil",
+      "$0.00",
+      "Extra braised mushrooms (40 g)",
+      "+$3.50",
+      "Bakery",
+      "Original Salt Bread",
+      "$5.50",
+      "Sweet Corn & Cream Cheese Salt Bread",
+      "$7.00",
+      "Matcha Almond Salt Bread",
+      "$8.50",
+      "Mentaiko Salt Bread",
+      "$8.90",
+      "Prawn Katsu Salt Bread",
+      "$9.50",
+      "Taiwanese Sausage & Garlic Salt Bread",
+      "$9.50",
+      "Hot drinks",
+      "Short Black",
+      "$4.00",
+      "Doppio",
+      "$4.00",
+      "Ristretto",
+      "$4.00",
+      "Short Macchiato",
+      "$4.50",
+      "Long Macchiato",
+      "$4.50",
+      "Long Black",
+      "Small",
+      "$5.00",
+      "Medium",
+      "$6.00",
+      "Large",
+      "$7.00",
+      "Piccolo",
+      "$4.50",
+      "Magic",
+      "$5.50",
+      "Flat White",
+      "Small",
+      "$5.50",
+      "Medium",
+      "$6.50",
+      "Large",
+      "$7.50",
+      "Latte",
+      "Small",
+      "$5.50",
+      "Medium",
+      "$6.50",
+      "Large",
+      "$7.50",
+      "Cappuccino",
+      "Small",
+      "$5.50",
+      "Medium",
+      "$6.50",
+      "Large",
+      "$7.50",
+      "Affogato",
+      "$6.00",
+      "Mocha",
+      "Small",
+      "$5.80",
+      "Medium",
+      "$6.80",
+      "Large",
+      "$7.80",
+      "Dirty Chai",
+      "Small",
+      "$6.00",
+      "Medium",
+      "$7.00",
+      "Large",
+      "$8.00",
+      "Hot Chocolate",
+      "Small",
+      "$5.80",
+      "Medium",
+      "$6.80",
+      "Large",
+      "$7.80",
+      "Chai Latte",
+      "Small",
+      "$6.00",
+      "Medium",
+      "$7.00",
+      "Large",
+      "$8.00",
+      "Babyccino",
+      "Ask at the counter",
+      "Pup Cup",
+      "Ask at the counter",
+      "Hot tea",
+      "English Breakfast Tea",
+      "$5.00",
+      "Green Tea",
+      "$5.00",
+      "Earl Grey Tea",
+      "$5.00",
+      "Lemongrass Ginger Tea",
+      "$5.00",
+      "Peppermint Tea",
+      "$5.00",
+      "Hot drink extras",
+      "Full Cream, Skim or Lactose-Free Milk",
+      "$0.00",
+      "Almond, Oat or Bonsoy Milk",
+      "+$1.00",
+      "Syrup",
+      "Caramel, vanilla, hazelnut or white chocolate",
+      "+$1.00",
+      "Extra Shot",
+      "+$1.00",
+      "Whipped Cream",
+      "+$1.00",
+      "Ice Cream",
+      "Chocolate, strawberry or vanilla",
+      "+$1.50",
+      "Iced drinks",
+      "Iced Long Black",
+      "$6.50",
+      "Iced Latte",
+      "$7.50",
+      "Iced Coffee",
+      "Ice cream and whipped cream",
+      "$8.50",
+      "Iced Mocha",
+      "Dark or white chocolate, ice cream and whipped cream",
+      "$9.00",
+      "Iced Dirty Chai",
+      "$8.50",
+      "Iced Chocolate",
+      "Dark or white chocolate, ice cream and whipped cream",
+      "$8.50",
+      "Iced Chai Latte",
+      "$7.50",
+      "Iced Tiramisu Latte",
+      "$9.00",
+      "Iced Biscoff Latte",
+      "Ice cream and whipped cream",
+      "$9.00",
+      "Iced drink extras",
+      "Salted Cream",
+      "+$1.50",
+      "Egg Cream",
+      "+$1.50",
+      "Caramel Flan",
+      "+$2.50",
+      "Frappes",
+      "Chocolate Frappe",
+      "$9.00",
+      "Coffee Frappe (Vanilla or Caramel)",
+      "$9.00",
+      "Mocha or White Chocolate Mocha Frappe",
+      "$9.00",
+      "Biscoff Frappe",
+      "$9.00",
+      "Strawberry & Cream Frappe",
+      "$9.00",
+      "Smoothies",
+      "Berry Storm",
+      "Blueberry, strawberry, raspberry, apple juice and Greek yoghurt",
+      "$9.00",
+      "Dragon-Air",
+      "Mango, dragonfruit, pineapple juice and Greek yoghurt",
+      "$9.00",
+      "Just Green",
+      "Avocado, banana, spinach, Greek yoghurt and almond milk",
+      "$9.00",
+      "Shakes",
+      "Milkshake",
+      "Chocolate · Biscoff · Vanilla · Coffee · Strawberry · Mocha · Caramel",
+      "$6.50",
+      "Thickshake",
+      "Chocolate · Biscoff · Vanilla · Coffee · Strawberry · Mocha · Caramel",
+      "$7.50",
+      "Sodas",
+      "Dragon Lychee Soda",
+      "$6.00",
+      "Strawberry Peach Soda",
+      "$6.00",
+      "Lemon Soda",
+      "$6.00",
+      "Iced Tea",
+      "Soursop Iced Tea",
+      "$7.00",
+      "Dragon Lychee Iced Tea",
+      "$7.00",
+      "Peach Lemongrass Orange Iced Tea",
+      "$7.00",
+      "Specialty drinks",
+      "The Phin Series",
+      "Vietnamese Iced Coffee",
+      "Traditional cà phê sữa đá",
+      "$7.00",
+      "Salted Cream Coffee",
+      "Signature Vietnamese coffee topped with salted cream",
+      "$8.50",
+      "Egg Coffee",
+      "Signature Vietnamese coffee topped with egg cream",
+      "$8.50",
+      "Flan Coffee",
+      "Signature Vietnamese coffee with caramel flan",
+      "$9.00",
+      "Coconut Coffee",
+      "Robusta coconut frappe",
+      "$9.00",
+      "Matcha",
+      "Iced Matcha Latte",
+      "$8.00",
+      "Strawberry Matcha",
+      "$9.00",
+      "Mango Matcha",
+      "$9.00",
+      "Tehbotol Matcha Cloud",
+      "$9.00",
+      "Banana Pudding Matcha",
+      "$10.50",
+      "Matchamisu Latte",
+      "$10.50",
+      "Hojicha",
+      "Iced Hojicha Latte",
+      "$8.00",
+      "Strawberry Hojicha",
+      "$9.00",
+      "Mango Hojicha",
+      "$9.00",
+      "Cafe",
+      "Made carefully. Served casually.",
+      "Explore",
+      "About us",
+      "Menu",
+      "Meet Bagel",
+      "Visit",
+      "Find us",
+      "Shop 7, 88 Troughton Rd",
+      "Sunnybank, QLD 4109",
+      "cookd.cafe@gmail.com",
+      "@cookd.cafe",
+      "© 2026 Cook'd Cafe",
+      "Sunnybank · Brisbane"
+    ],
+    "links": [
+      {
+        "href": "#main"
+      },
+      {
+        "href": "/",
+        "aria-label": "Cook'd Cafe home"
+      },
+      {
+        "href": "/"
+      },
+      {
+        "href": "/#story"
+      },
+      {
+        "href": "/menu/"
+      },
+      {
+        "href": "/#visit"
+      },
+      {
+        "href": "/menu/"
+      },
+      {
+        "href": "/menu/"
+      },
+      {
+        "href": "/"
+      },
+      {
+        "href": "/#story"
+      },
+      {
+        "href": "/menu/"
+      },
+      {
+        "href": "/#bagel"
+      },
+      {
+        "href": "/#visit"
+      },
+      {
+        "href": "#breakfast"
+      },
+      {
+        "href": "#lunch"
+      },
+      {
+        "href": "#bakery"
+      },
+      {
+        "href": "#drinks-board"
+      },
+      {
+        "href": "#iced-drinks"
+      },
+      {
+        "href": "#specialty"
+      },
+      {
+        "href": "/",
+        "aria-label": "Cook'd Cafe home"
+      },
+      {
+        "href": "/#story"
+      },
+      {
+        "href": "/menu/"
+      },
+      {
+        "href": "/#bagel"
+      },
+      {
+        "href": "/#visit"
+      },
+      {
+        "href": "mailto:cookd.cafe@gmail.com"
+      },
+      {
+        "href": "https://www.instagram.com/cookd.cafe/"
+      }
+    ]
+  }
+}

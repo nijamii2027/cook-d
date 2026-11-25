@@ -1,0 +1,97 @@
+.cookd-landing {position:relative;background:var(--dish-tint,#f6d777);transition:background-color .95s ease;}
+.cookd-landing::after {content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:url("/media/brand/paper.png");opacity:.23;mix-blend-mode:multiply;}
+.cookd-landing .hero-type {margin:0;position:absolute;left:0;width:100%;display:flex;justify-content:center;align-items:center;font-weight:400;}
+.cookd-landing .hero-aside {position:absolute;z-index:1;font:400 clamp(1.4rem,2.6vw,3.05rem)/1.05 var(--hand);white-space:nowrap;}
+.cookd-landing .hero-pre {left:4.6%;transform:rotate(-11deg);}
+.cookd-landing .hero-post {right:3.6%;top:52%;transform:rotate(9deg);}
+.cookd-landing .pencil-swipe {position:absolute;left:2%;bottom:-.26em;width:94%;height:.21em;border-bottom:2px solid var(--red);border-radius:50%;transform:rotate(-3deg);}
+.cookd-landing .hero-bottom {position:absolute;left:var(--gutter);right:var(--gutter);z-index:7;gap:1rem;pointer-events:none;}
+.cookd-landing .hero-explore {pointer-events:auto;display:inline-flex;align-items:center;justify-content:center;gap:.42rem;padding:.65rem 1.15rem;border:1.5px solid var(--ink);border-radius:32px;background:var(--paper);box-shadow:0 3px 0 var(--ink);font-weight:700;font-size:.9rem;line-height:1.35;transition:background-color .2s,color .2s;}
+.cookd-landing .hero-explore:is(:hover,:focus-visible) {background-color:var(--ink);color:var(--paper);}
+@media (min-width:1700px){.cookd-landing .hero-pre{left:9%;}.cookd-landing .hero-post{right:7.5%;}}
+@media (max-width:700px){.cookd-landing .hero-aside {font-size:clamp(1.22rem,4.7vw,1.7rem);} .cookd-landing .hero-post {top:auto;}}
+.cookd-landing {
+  --hero-scroll: 0px;
+  --dish-tint: #f6d777;
+  height:clamp(600px,calc(94svh - 74px),900px);
+  isolation:isolate;
+  overflow:hidden;
+  touch-action:pan-y pinch-zoom;
+}
+.cookd-landing .hero-type {top:16%;height:36%;z-index:1;transform:translateY(calc(var(--hero-scroll) * -.16));}
+.cookd-landing .hero-pre {top:40%}
+.cookd-landing .logo-stage {position:relative;display:block;aspect-ratio:1546/586;height:100%;max-width:68%;max-height:25.7749vw;transform:rotate(-2deg);flex:none;}
+.logo-stage > img {display:block;width:100%;height:100%;}
+bagel-hop {position:absolute;inset:0;display:block;pointer-events:none;overflow:visible;}
+.logo-bagel {position:absolute;left:0;top:0;display:block;width:clamp(128px,21.5%,188px);aspect-ratio:1;background-size:800% 600%;background-repeat:no-repeat;transform-origin:0 0;will-change:transform;}
+.cookd-landing .hero-bottom {
+  display:flex;align-items:center;justify-content:space-between;bottom:5.2%;
+  transform:translateY(calc(var(--hero-scroll) * -.015));
+}
+.cookd-landing .dish-label {background:transparent;border:0;border-bottom:1.5px solid currentColor;padding:.28em .02em;box-shadow:none;transform:rotate(-2deg);font:400 clamp(1rem,1.8vw,1.65rem)/1.18 var(--hand);}
+.cookd-landing .hero-explore {margin:0;}
+.cookd-landing .dish-label[role="slider"] {pointer-events:auto;cursor:ew-resize;}
+food-scene {position:absolute;inset:0;display:block;overflow:hidden;contain:layout paint;isolation:isolate;pointer-events:none;z-index:2;transform:translateY(calc(var(--hero-scroll) * -.15));}
+food-scene:not(:defined)::before {content:"";position:absolute;inset:35% 25% 10%;background:url("/media/original/assets/menu/chilli-crab-omurice.webp") center/contain no-repeat;}
+.plate-portrait {position:absolute;left:0;top:0;aspect-ratio:760/580;transform-origin:center;user-select:none;}
+.plate-portrait img {display:block;position:relative;width:100%;height:100%;object-fit:contain;pointer-events:none;-webkit-user-drag:none;}
+.plate-portrait::before {content:"";position:absolute;left:11%;right:9%;top:33%;bottom:-1.5%;border-radius:50%;opacity:.44;background:radial-gradient(ellipse at 50% 51%,rgba(57,36,26,.74) 0%,rgba(57,36,26,.51) 41%,rgba(57,36,26,.15) 60%,transparent 71%);transform:rotate(-3deg) translateY(5%);filter:blur(3px);}
+.counter-wave {--ribbon-height:clamp(74px,7vw,108px);height:var(--ribbon-height);position:relative;z-index:3;margin-top:calc(var(--ribbon-height) * -.48);margin-bottom:calc(var(--ribbon-height) * -.52);pointer-events:none;}
+.counter-wave__art {width:100%;height:100%;display:block;overflow:hidden;}
+.counter-wave__ribbon {fill:var(--ink);}
+.counter-wave__copy,
+.counter-wave__fallback {font:400 22px/1.18 var(--hand);letter-spacing:normal;}
+.counter-wave__copy {fill:var(--paper);}
+.counter-wave__fallback {
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-size:clamp(18px,1.6vw,30px);color:var(--paper);
+}
+.counter-wave.is-drawn .counter-wave__fallback {display:none;}
+@media (max-width:700px) {
+ .cookd-landing {height:clamp(550px,calc(89svh - 60px),730px);}
+ .cookd-landing .hero-type {top:17%;height:29%;align-items:center;}
+ /* Reserve room above the C and d for the runner's hat on wide, short phones. */
+ .cookd-landing .logo-stage {height:auto;width:85%;max-width:max(519px,calc(138svh - 420px));max-height:none;}
+ .cookd-landing .hero-pre {top:calc(-1 * clamp(2.8rem, 10vw, 4.8rem));left:5%;}
+ .cookd-landing .hero-post {right:8%;bottom:-3%;}
+ .cookd-landing .hero-bottom {bottom:5.9%;flex-direction:column;gap:.62rem;align-items:center;}
+ .cookd-landing .dish-label {white-space:normal;max-width:100%;text-align:center;font-size:1rem;}
+ .cookd-landing .hero-explore {font-size:.85rem;padding:.55rem .95rem;}
+ .plate-portrait::before {filter:blur(2px);}
+}
+@media (max-width:380px) {
+ .cookd-landing .hero-post {bottom:0;}
+}
+@media (prefers-reduced-motion:reduce) {
+ .cookd-landing .hero-type,.cookd-landing food-scene,.cookd-landing .hero-bottom {transform:none;}
+ .cookd-landing {transition:none;}
+}
+
+bagel-hop {isolation:isolate;}
+.logo-bagel {mix-blend-mode:plus-lighter;}
+bagel-hop:not([data-ready]) .logo-bagel {
+  left:46.15136%;top:32.16724%;
+  background:url("/media/mascot/hop-still.webp") center/contain no-repeat;
+  transform:translate(-59.72222%,-75%);
+}
+.cookd-landing .hero-bottom .dish-label{background:var(--paper);border:1px solid var(--ink);padding:.35rem .72rem .46rem;box-shadow:1px 2px 0 var(--ink);color:var(--ink)}
+
+/* The stroke grows from the caption. Its target sits inside the ink of the C. */
+.hero-pointer {
+  --pointer-bearing:0deg;
+  position:absolute;left:calc(100% + .22em);top:.63em;width:0;height:0;
+  color:var(--red);pointer-events:none;
+}
+.hero-pointer svg {
+  display:block;position:absolute;left:0;top:0;width:clamp(29px,2.7vw,43px);max-width:none;
+  height:auto;overflow:visible;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;
+  transform-origin:left center;transform:translateY(-50%) rotate(var(--pointer-bearing));
+}
+.hero-pointer-axis,.hero-pointer-target {position:absolute;display:block;width:0;height:0;pointer-events:none;}
+.hero-pointer-axis {left:12px;top:0;}
+.hero-pointer-target {left:16%;top:20%;}
+@media(max-width:700px) {
+  .hero-pointer {--pointer-bearing:103deg;left:calc(100% + .16em);top:.68em;}
+  .hero-pointer svg {width:clamp(24px,5.7vw,29px);stroke-width:2.45;}
+}

@@ -1,0 +1,26 @@
+/* Original wordmark and true Schoolbell outlines are a single inline drawing.
+   The header and footer therefore have the same proportions from first paint. */
+.brand.brand-lockup {
+  --brand-width: 7.87rem;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-self: start;
+  width: var(--brand-width);
+  max-width: 100%;
+  line-height: 1;
+}
+
+.brand-lockup .brand-art {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site-footer .brand-lockup {
+  --brand-width: clamp(10.61rem, 25.46vw, 24.31rem);
+}
+
+@media (max-width: 760px) {
+  .site-header .brand-lockup { --brand-width: 6.72rem; }
+}

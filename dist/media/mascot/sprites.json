@@ -1,0 +1,230 @@
+{
+  "frames": 48,
+  "grid": [
+    8,
+    6
+  ],
+  "contacts": "contacts.json",
+  "turnContacts": "turnaround.json",
+  "hopContacts": "hop.json",
+  "facing": {
+    "run": "right",
+    "route": "right",
+    "sip": "right",
+    "sip-run": "right",
+    "climb": "right",
+    "hang": "right",
+    "crest": "right",
+    "traverse": "right",
+    "hop": "right"
+  },
+  "actions": {
+    "climb": {
+      "file": "climb.webp",
+      "cell": [
+        288,
+        288
+      ],
+      "durationSeconds": 1.34,
+      "still": "climb-still.webp"
+    },
+    "hang": {
+      "file": "hang.webp",
+      "cell": [
+        288,
+        288
+      ],
+      "durationSeconds": 2.4,
+      "still": "hang-still.webp"
+    },
+    "traverse": {
+      "file": "traverse.webp",
+      "cell": [
+        288,
+        288
+      ],
+      "durationSeconds": 1.4,
+      "still": "traverse-still.webp"
+    },
+    "crest": {
+      "file": "crest.webp",
+      "cell": [
+        288,
+        288
+      ],
+      "durationSeconds": 1.3,
+      "still": "crest-still.webp"
+    },
+    "turnaround": {
+      "file": "turnaround.webp",
+      "cell": [
+        288,
+        288
+      ],
+      "durationSeconds": 1.38,
+      "still": "turnaround-still.webp"
+    },
+    "hop": {
+      "file": "hop.webp",
+      "cell": [
+        288,
+        288
+      ],
+      "durationSeconds": 1.28,
+      "still": "hop-still.webp"
+    },
+    "hop-turn": {
+      "file": "hop-turn.webp",
+      "cell": [
+        288,
+        288
+      ],
+      "durationSeconds": 1.18,
+      "still": "hop-turn-still.webp"
+    },
+    "pan": {
+      "file": "pan.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 2.65,
+      "still": "pan-still.webp"
+    },
+    "pour": {
+      "file": "pour.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 2.8,
+      "still": "pour-still.webp"
+    },
+    "knead": {
+      "file": "knead.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 2.1,
+      "still": "knead-still.webp"
+    },
+    "peel": {
+      "file": "peel.webp",
+      "cell": [
+        320,
+        320
+      ],
+      "durationSeconds": 3.6,
+      "still": "peel-still.webp"
+    },
+    "chop": {
+      "file": "chop.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 2.2,
+      "still": "chop-still.webp"
+    },
+    "hello": {
+      "file": "hello.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 3.35,
+      "still": "hello-still.webp"
+    },
+    "garnish": {
+      "file": "garnish.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 2.5,
+      "still": "garnish-still.webp"
+    },
+    "dust": {
+      "file": "dust.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 2.5,
+      "still": "dust-still.webp"
+    },
+    "arrive": {
+      "file": "arrive.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 2.7,
+      "still": "arrive-still.webp"
+    },
+    "tamp": {
+      "file": "tamp.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 2.6,
+      "still": "tamp-still.webp"
+    },
+    "shake": {
+      "file": "shake.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 2.55,
+      "still": "shake-still.webp"
+    },
+    "nod": {
+      "file": "nod.webp",
+      "cell": [
+        288,
+        288
+      ],
+      "durationSeconds": 3.2,
+      "still": "nod-still.webp"
+    },
+    "run": {
+      "file": "run.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 0.8,
+      "still": "run-still.webp"
+    },
+    "route": {
+      "file": "route.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 0.9,
+      "still": "route-still.webp"
+    },
+    "sip": {
+      "file": "sip.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 2.4,
+      "still": "sip-still.webp"
+    },
+    "sip-run": {
+      "file": "sip-run.webp",
+      "cell": [
+        256,
+        256
+      ],
+      "durationSeconds": 0.9,
+      "still": "sip-run-still.webp"
+    }
+  }
+}

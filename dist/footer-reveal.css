@@ -1,0 +1,147 @@
+@media screen {
+  .site-footer {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-rows: minmax(min-content, 1fr) auto;
+    align-items: center;
+    gap: clamp(2.8rem, 6.5vh, 5.5rem);
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-block: clamp(3.2rem, 8.5vh, 6.5rem) max(1.5rem, env(safe-area-inset-bottom));
+  }
+
+  .site-footer > .footer-grid,
+  .site-footer > .footer-bottom {
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .site-footer > .footer-grid {
+    margin-block: 0;
+    align-items: start;
+    grid-template-columns: minmax(0, 1.65fr) minmax(7rem, .66fr) minmax(15rem, .92fr);
+    gap: clamp(1.8rem, 5vw, 6rem);
+  }
+  .site-footer > .footer-bottom {
+    margin-block: 0;
+    color: #e7dfd0;
+    font-size: .81rem;
+    border-color: #fff8e949;
+  }
+  .site-footer .brand-lockup {
+    --brand-width: clamp(13rem, 31vw, 32rem);
+  }
+  .site-footer .footer-tagline {
+    width: fit-content;
+    max-width: 100%;
+    margin: clamp(.85rem, 1.9vw, 1.65rem) 0 0 .1rem;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    line-height: 1.25;
+  }
+  .site-footer .footer-label {
+    margin: 0 0 .85rem;
+    font: 400 clamp(1.45rem, 1.8vw, 2rem)/1.2 var(--hand);
+    letter-spacing: -.015em;
+    text-transform: none;
+    color: #f7cf72;
+  }
+  .site-footer .footer-links a,
+  .site-footer .footer-visit a {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    font: 400 clamp(1rem, 1.15vw, 1.18rem)/1.4 var(--body);
+    margin: 0;
+    padding-block: .32rem;
+    overflow-wrap: anywhere;
+    transition: color .18s;
+  }
+  .footer-visit address {
+    font: 400 clamp(1.15rem, 1.55vw, 1.6rem)/1.23 var(--display);
+    letter-spacing: -.025em;
+    margin: 0 0 .77rem;
+  }
+  .footer-street { white-space: nowrap; }
+  .site-footer a:not(.brand):is(:hover,:focus-visible) {
+    color: #f7cf72;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: .22em;
+  }
+  .site-footer :focus-visible {
+    outline-color: var(--paper);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .site-footer > .footer-grid {
+    grid-template-columns: minmax(0, .76fr) minmax(0, 1.24fr);
+    gap: 2.6rem clamp(.85rem, 4vw, 2.5rem);
+  }
+  .site-footer .brand-lockup { --brand-width: clamp(13rem, 62vw, 24rem); }
+  .site-footer .footer-visit a { font-size: .95rem; }
+  .site-footer .footer-links a, .site-footer .footer-visit a { padding-block: .46rem; }
+}
+@media screen and (max-width: 340px) {
+  .site-footer > .footer-grid { grid-template-columns: 1fr; row-gap: 1.6rem; }
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  /* Keep exactly the last viewport of the preceding page in place while the
+     real footer scrolls over it. Links and the scrollbar retain their positions. */
+  main.footer-cover-ready {
+    position: sticky;
+    top: min(0px, calc(100vh - var(--footer-preceding-height)));
+    top: min(0px, calc(100dvh - var(--footer-preceding-height)));
+    z-index: 0;
+  }
+}
+
+@media screen and (scripting: none) {
+  .site-footer + noscript {
+    display: block;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0 var(--gutter) 1.3rem;
+  }
+}
+
+/* Extend the wave two pixels into its section to keep the join solid as the
+   footer scrolls over either page. */
+@media screen {
+  .visit-stop::before,
+  .site-footer::after {
+    --edge-period: clamp(24rem, 63vw, 65rem);
+    --edge-depth: clamp(1.45rem, 3.35vw, 3.8rem);
+    position: absolute;
+    content: "";
+    pointer-events: none;
+    inset-inline: 0;
+    bottom: calc(100% - 2px);
+    height: var(--edge-depth);
+    background-repeat: repeat-x;
+    background-size: var(--edge-period) 100%;
+  }
+
+  .visit-stop::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 64' preserveAspectRatio='none'%3E%3Cpath fill='%23f4eddf' d='M0 32C83.333 42.996 166.667 53 250 53S416.667 42.996 500 32S666.667 11 750 11S916.667 21.004 1000 32V64H0Z'/%3E%3Cpath fill='none' stroke='%23837863' stroke-width='1' stroke-opacity='.68' vector-effect='non-scaling-stroke' d='M0 32C83.333 42.996 166.667 53 250 53S416.667 42.996 500 32S666.667 11 750 11S916.667 21.004 1000 32'/%3E%3C/svg%3E");
+    background-position: 0 0;
+  }
+
+  .site-footer::after {
+    --edge-period: clamp(25rem, 68vw, 69rem);
+    --edge-depth: clamp(1.75rem, 4.6vw, 4.8rem);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 64' preserveAspectRatio='none'%3E%3Cpath fill='%2319244d' d='M0 32C83.333 42.996 166.667 53 250 53S416.667 42.996 500 32S666.667 11 750 11S916.667 21.004 1000 32V64H0Z'/%3E%3C/svg%3E");
+    background-position: calc(var(--edge-period) * -.3) 0;
+  }
+}
+
+@keyframes section-edge-roll {
+  from { background-position-x: 0; }
+  to { background-position-x: calc(var(--edge-period) * -1); }
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .visit-stop::before { animation: section-edge-roll 14s linear infinite; }
+  .site-footer::after { animation: section-edge-roll 16s -5s linear infinite reverse; }
+}
