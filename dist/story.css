@@ -298,7 +298,11 @@
   height: 100vh;
   height: 100svh;
   overflow: hidden;
+  touch-action: pan-y pinch-zoom;
+  cursor: grab;
 }
+.story-reel.is-sticky .story-reel-window.is-dragging { cursor: grabbing; user-select: none; }
+.story-reel.is-sticky .story-reel-window img { -webkit-user-drag: none; }
 .story-reel.is-sticky .story-reel-strip { display: flex; width: 100%; height: 100%; }
 .story-reel.is-sticky .story-panel { flex: 0 0 100%; min-width: 0; height: 100%; }
 .story-reel.is-sticky .story-panel-inner { min-height: 100%; padding-block: 1.8rem; }

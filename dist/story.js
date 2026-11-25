@@ -255,6 +255,90 @@
     let resizeFrame = 0;
     let disposed = false;
 
+    let drag = null;
+    let wheelTarget = null;
+    const listeners = new AbortController();
+    const { signal } = listeners;
+
+    function scrollRange() {
+      const trigger = timeline?.scrollTrigger;
+      if (!trigger || window.scrollY < trigger.start - 1 || window.scrollY > trigger.end + 1) return null;
+      return trigger;
+    }
+
+    function scrollToPanelPosition(origin, pixels, range) {
+      const travel = stage.clientWidth * (panels.length - 1);
+      if (!travel) return origin;
+      const next = Math.max(range.start, Math.min(range.end, origin + pixels * (range.end - range.start) / travel));
+      const lenis = window.CookdMotion?.lenis;
+      if (lenis) lenis.scrollTo(next, { immediate: true, force: true });
+      else window.scrollTo({top: next, behavior: 'instant'});
+      ScrollTrigger.update();
+      return next;
+    }
+
+    function finishDrag() {
+      if (!drag) return;
+      const id = drag.id;
+      drag = null;
+      stage.classList.remove('is-dragging');
+      if (stage.hasPointerCapture(id)) stage.releasePointerCapture(id);
+    }
+
+    stage.addEventListener('pointerdown', event => {
+      if (!event.isPrimary) { finishDrag(); return; }
+      if (event.button !== 0 || !scrollRange() ||
+          event.target.closest('a, button, input, select, textarea, [contenteditable="true"]')) return;
+      wheelTarget = null;
+      drag = {id: event.pointerId, x: event.clientX, y: event.clientY, top: window.scrollY, horizontal: false};
+    }, {signal});
+
+    window.addEventListener('pointermove', event => {
+      if (event.pointerId !== drag?.id) return;
+      const range = scrollRange();
+      if (!range) { finishDrag(); return; }
+      const dx = drag.x - event.clientX;
+      if (!drag.horizontal) {
+        const dy = Math.abs(event.clientY - drag.y);
+        if (Math.max(Math.abs(dx), dy) < 7) return;
+        if (dy >= Math.abs(dx)) { finishDrag(); return; }
+        drag.horizontal = true;
+        stage.classList.add('is-dragging');
+        stage.setPointerCapture(event.pointerId);
+      }
+      if (event.cancelable) event.preventDefault();
+      scrollToPanelPosition(drag.top, dx, range);
+    }, {signal, passive: false});
+
+    for (const type of ['pointerup', 'pointercancel', 'lostpointercapture']) {
+      window.addEventListener(type, event => {
+        if (event.pointerId === drag?.id) finishDrag();
+      }, {signal});
+    }
+    window.addEventListener('blur', finishDrag, {signal});
+    stage.addEventListener('dragstart', event => {
+      if (drag) event.preventDefault();
+    }, {signal});
+
+    stage.addEventListener('wheel', event => {
+      if (event.ctrlKey || event.metaKey || !event.cancelable || event.defaultPrevented) return;
+      const range = scrollRange();
+      let delta = event.deltaX;
+      if (Math.abs(event.deltaY) >= Math.abs(delta)) {
+        if (!event.shiftKey) { wheelTarget = null; return; }
+        delta = event.deltaY;
+      }
+      if (!range || !delta) return;
+      if (event.deltaMode === 1) delta *= 16;
+      if (event.deltaMode === 2) delta *= stage.clientWidth;
+      const y = window.scrollY;
+      const origin = wheelTarget !== null && Math.abs(wheelTarget - y) < 1 ? wheelTarget : y;
+      if ((origin <= range.start && delta < 0) || (origin >= range.end && delta > 0)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      wheelTarget = scrollToPanelPosition(origin, delta, range);
+    }, {signal, passive: false});
+
     const visiblePanels = new IntersectionObserver(entries => {
       for (const { target, isIntersecting } of entries) target.classList.toggle('is-playing', isIntersecting);
     });
@@ -267,6 +351,7 @@
         panel.querySelector('.story-panel-inner').scrollHeight <= stage.clientHeight + 2
       );
       if (!fits) {
+        finishDrag();
         timeline?.scrollTrigger?.kill();
         timeline?.revert();
         timeline = null;
@@ -274,36 +359,24 @@
         return;
       }
       if (timeline) return;
-      // The sticky window and its document-height parent supply the entire scroll range.
-      // No wheel, touch or keyboard events need intercepting, including in reverse.
+      // Native vertical scrolling and direct horizontal input share one position.
+      // Map the first and last pixels too, so reversing never enters a stationary end zone.
       timeline = gsap.timeline({
         scrollTrigger: {
-          trigger: reel,
-          start: 'top top',
+          trigger: reel, start: 'top top',
           end: () => '+=' + (reel.offsetHeight - stage.offsetHeight),
-          scrub: true,
-          snap: {
-            snapTo(progress) {
-              // Only settle a partly crossed panel. Preserve the native reading space on each scene.
-              for (const [start, end] of [[.36 / 2.39, 1.02 / 2.39], [1.36 / 2.39, 2.02 / 2.39]]) {
-                if (progress > start && progress < end) return progress < (start+end)/2 ? start : end;
-              }
-              return progress;
-            },
-            inertia:false, directional:false, delay:.26, duration:{min:.14,max:.38}, ease:'power2.out'
-          },
-          invalidateOnRefresh: true
+          scrub: true, invalidateOnRefresh: true
         }
       });
+      const crossings = panels.length - 1;
+      timeline.to(strip, {xPercent: -100 * crossings, duration: crossings, ease: 'none'}, 0);
       for (let i = 1; i < panels.length; i++) {
-        const at = (i - 1) + .36;
+        const at = i - 1;
         timeline
-          .to(strip, { xPercent: -100 * i, duration: .66, ease: 'sine.inOut' }, at)
-          .to(photo(panels[i - 1]), { xPercent: 5, rotation: -3, duration: .62, ease: 'sine.inOut' }, at)
-          .fromTo(photo(panels[i]), { xPercent: -8, rotation: 4 }, { xPercent: 0, rotation: 0, duration: .75, ease: 'power2.out' }, at)
-          .fromTo(copy(panels[i]), { y: 16 }, { y: 0, duration: .59, ease: 'power2.out' }, at + .1);
+          .to(photo(panels[i - 1]), { xPercent: 5, rotation: -3, duration: .95, ease: 'sine.inOut' }, at)
+          .fromTo(photo(panels[i]), { xPercent: -8, rotation: 4 }, { xPercent: 0, rotation: 0, duration: .95, ease: 'power2.out' }, at)
+          .fromTo(copy(panels[i]), { y: 16 }, { y: 0, duration: .8, ease: 'power2.out' }, at + .08);
       }
-      timeline.to({}, { duration: .37 }, 2.02);
     }
     function resize() {
       if (!disposed && !resizeFrame) resizeFrame = requestAnimationFrame(layout);
@@ -314,6 +387,8 @@
     document.fonts?.ready.then(resize);
     return () => {
       disposed = true;
+      listeners.abort();
+      finishDrag();
       window.removeEventListener('resize', resize);
       cancelAnimationFrame(resizeFrame);
       timeline?.scrollTrigger?.kill();
